@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="GemRequirementsHolder" version="2">
+    <requirement>
+      <requirement>
+        <dependency name="hoe" version="2.1.0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source from="Rakefile" />
+      <source from="pkg/importer-0.0.1/Rakefile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rspec" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source from="pkg/importer-0.0.1/spec/spec_helper.rb" />
+      <source from="spec/spec_helper.rb" />
+    </requirement>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
+

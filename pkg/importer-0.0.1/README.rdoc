@@ -1,0 +1,79 @@
+= importer
+
+* http://github.com/#{github_username}/#{project_name}
+
+== DESCRIPTION:
+
+This is a general purpose importer gem.
+This gem handles importing csv files. Usage:
+
+Importer::CSV.open("somefile.csv") do |row, index|
+    # process the row
+    # if you want to ignore the row return Importer::CSV::IGNORE it will be
+    # added to the ignore .csv file in the log directory
+    # if you have an exception while processing a row it will be added to the
+    # error .csv file in the log directory with the exception information in the error .log file
+    # you can re-run these files if you need to
+end
+
+
+== FEATURES/PROBLEMS:
+
+* Allows you to process CSV files with ignores and exceptions written out to a csv file
+for further processing.
+
+* You can specify the log directory using the options :log_dir=>'my_log_directory_location' example:
+
+
+== SYNOPSIS:
+
+# import a file
+Importer::CSV.open("somefile.csv") do |row, index|
+    # process the row
+    # if you want to ignore the row return Importer::CSV::IGNORE it will be
+    # added to the ignore .csv file in the log directory
+    # if you have an exception while processing a row it will be added to the
+    # error .csv file in the log directory with the exception information in the error .log file
+    # you can re-run these files if you need to
+end
+
+    
+# Writing to a different log directory
+    Importer::CSV.open("somefile.csv", {:log_dir=>"/tmp/log/company_name"}) do |row, index|
+        # now all my ignore and error logs will go to /tmp/log/company_name
+        # this can be relative or absolute
+    end
+
+
+== REQUIREMENTS:
+
+* faster_csv gem
+
+== INSTALL:
+
+* sudo gem install voomify-importer
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2010 Russell Edens
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
