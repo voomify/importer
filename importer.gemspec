@@ -33,8 +33,10 @@ end}
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<faster_csv>, [">= 1.5.0"])
-      s.add_development_dependency(%q<hoe>, [">= 2.4.0"])
+      # LDB:: removed for rails 3.1
+      #s.add_runtime_dependency(%q<faster_csv>, [">= 1.5.0"])
+      #s.add_development_dependency(%q<hoe>, [">= 2.4.0"])
+      # LDB:: end
     else
       s.add_dependency(%q<faster_csv>, [">= 1.5.0"])
       s.add_dependency(%q<hoe>, [">= 2.4.0"])
